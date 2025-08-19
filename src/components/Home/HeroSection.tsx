@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import en from "../../i18n/en.json";
 
 interface HeroSlide {
   id: number;
@@ -33,16 +34,16 @@ export default function HeroSection() {
 
         const formattedSlides: HeroSlide[] = data.data.map((item: any) => ({
           id: item.id,
-          title: item.title,
-          subtitle: item.subtitle,
-          description: item.description,
-          profile_alt: item.profile_alt,
-          bg_alt: item.bg_alt,
+          title: item.title || en.hero.defaultTitle, // fallback to en.json
+          subtitle: item.subtitle || en.hero.defaultSubtitle,
+          description: item.description || en.hero.defaultDescription,
+          profile_alt: item.profile_alt || en.hero.profileAlt,
+          bg_alt: item.bg_alt || en.hero.bgAlt,
           profile_pic: item.profile_pic
-            ? { url: item.profile_pic.url } // already absolute
+            ? { url: item.profile_pic.url }
             : undefined,
           background_image: item.background_image
-            ? { url: item.background_image.url } // already absolute
+            ? { url: item.background_image.url } 
             : undefined,
         }));
 
@@ -75,7 +76,7 @@ export default function HeroSection() {
   }
 
   return (
-    <section className="relative w-full font-[Poppins] bg-black min-h-screen flex items-center overflow-hidden">
+    <section className="relative w-full bg-black min-h-screen flex items-center overflow-hidden">
       <Swiper
         modules={[Pagination, Autoplay]}
         loop={loopEnabled}
@@ -132,7 +133,7 @@ export default function HeroSection() {
                   {slide.description}
                 </p>
                 <button className="bg-white text-black font-semibold w-[161px] h-[60px] rounded-full shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300">
-                  Read More
+                  {en.hero.readMore} {/* Button text from en.json */}
                 </button>
               </div>
             </div>

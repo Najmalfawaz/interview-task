@@ -3,6 +3,7 @@ import { useState } from "react"
 import { Formik, Form, Field, ErrorMessage } from "formik"
 import * as Yup from "yup"
 import { FaFacebookF, FaTwitter, FaGooglePlusG } from "react-icons/fa"
+import en from "../../i18n/en.json"
 
 export default function Footer() {
   const [subscribedEmails, setSubscribedEmails] = useState<string[]>([])
@@ -16,11 +17,11 @@ export default function Footer() {
   const handleSubmit = (values: { email: string }, { resetForm }: any) => {
     if (subscribedEmails.includes(values.email)) {
       setModalType("error")
-      setModalMessage("This email is already subscribed!")
+      setModalMessage(en.footer.modal.error)
     } else {
       setSubscribedEmails([...subscribedEmails, values.email])
       setModalType("success")
-      setModalMessage("Thank you for subscribing!")
+      setModalMessage(en.footer.modal.success)
       resetForm()
     }
   }
@@ -66,7 +67,7 @@ export default function Footer() {
                       <Field
                         type="email"
                         name="email"
-                        placeholder="Enter your email"
+                        placeholder={en.footer.subscribePlaceholder}
                         className="px-2 py-1 text-black text-sm w-64 sm:w-80 bg-white outline-none focus:outline-none border-none"
                       />
                       <button
@@ -78,10 +79,9 @@ export default function Footer() {
                           : "bg-[#4A2C17] hover:bg-[#3B2418]"
                         }`}
                       >
-                        {isSubmitting ? "Submitting..." : "Subscribe"}
+                        {isSubmitting ? "Submitting..." : en.footer.subscribeButton}
                       </button>
                     </Form>
-                    {/* Inline Error below form */}
                     <ErrorMessage
                       name="email"
                       component="div"
@@ -93,14 +93,14 @@ export default function Footer() {
             </div>
 
             {/* Contacts Text */}
-            <span className="text-white">Contacts</span>
+            <span className="text-white">{en.footer.contacts}</span>
           </div>
 
           {/* Social Icons */}
           <div className="flex items-center gap-4">
-            <FaTwitter className="w-5 h-5 cursor-pointer hover:text-gray-300 transition-colors" />
-            <FaFacebookF className="w-5 h-5 cursor-pointer hover:text-gray-300 transition-colors" />
-            <FaGooglePlusG className="w-5 h-5 cursor-pointer hover:text-gray-300 transition-colors" />
+            <FaTwitter className="w-5 h-5 cursor-pointer hover:text-gray-300 transition-colors" title={en.footer.social.twitter} />
+            <FaFacebookF className="w-5 h-5 cursor-pointer hover:text-gray-300 transition-colors" title={en.footer.social.facebook} />
+            <FaGooglePlusG className="w-5 h-5 cursor-pointer hover:text-gray-300 transition-colors" title={en.footer.social.google} />
           </div>
         </div>
       </div>
@@ -113,13 +113,11 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="flex flex-wrap items-center gap-4 sm:gap-8 text-sm sm:text-base">
-            <span className="hover:text-gray-300 cursor-pointer transition-colors">About</span>
-            <span className="hover:text-gray-300 cursor-pointer transition-colors">Our Strategy</span>
-            <span className="hover:text-gray-300 cursor-pointer transition-colors">Our Advantages</span>
-            <span className="hover:text-gray-300 cursor-pointer transition-colors">Social Responsibility</span>
-            <span className="hover:text-gray-300 cursor-pointer transition-colors">Our Services</span>
+            {en.footer.links.map((link, idx) => (
+              <span key={idx} className="hover:text-gray-300 cursor-pointer transition-colors">{link}</span>
+            ))}
           </div>
-          <div className="text-sm text-white/80">© 2024. All rights reserved.</div>
+          <div className="text-sm text-white/80">{en.footer.copyright}</div>
         </div>
       </div>
     </footer>

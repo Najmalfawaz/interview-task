@@ -1,40 +1,124 @@
 {
-  "nav": {
-    "home": "Home",
-    "about": "About us",
-    "services": "Services",
-    "blog": "Blog",
-    "team": "Our Team",
-    "contact": "Contact us",
-    "book": "Book Appointment",
-    "searchPlaceholder": "Search..."
-  },
-  "services": {
-    "legalConsultation": "Legal consultation Services",
-    "foreignInvestment": "Foreign Investment services",
-    "contracts": "Contracts",
-    "notarization": "Notarization",
-    "insurance": "Insurance",
-    "defenseCases": "Defense in all Cases",
-    "banksFinancial": "Banks and Financial Institutions",
-    "corporateGovernance": "Corporate Governance Services",
-    "companiesLiquidation": "Companies Liquidation",
-    "internalRegulations": "Internal Regulations for Companies",
-    "companyServices": "Services for Companies and Institution",
-    "arbitration": "Arbitration",
-    "intellectualProperty": "Intellectual Property",
-    "corporateRestructuring": "Corporate Restructuring and Reorganization",
-    "companyEstablishment": "Establishing National and Foreign Companies",
-    "commercialAgencies": "Commercial Agencies",
-    "vision2030": "Supporting Vision 2030",
-    "estates": "Estates"
-  },
+    "nav": {
+        "home": "Home",
+        "about": "About us",
+        "services": "Services",
+        "blog": "Blog",
+        "team": "Our Team",
+        "contact": "Contact us",
+        "book": "Book Appointment",
+        "searchPlaceholder": "Search..."
+    },
+    "services": {
+        "legalConsultation": "Legal consultation Services",
+        "foreignInvestment": "Foreign Investment services",
+        "contracts": "Contracts",
+        "notarization": "Notarization",
+        "insurance": "Insurance",
+        "defenseCases": "Defense in all Cases",
+        "banksFinancial": "Banks and Financial Institutions",
+        "corporateGovernance": "Corporate Governance Services",
+        "companiesLiquidation": "Companies Liquidation",
+        "internalRegulations": "Internal Regulations for Companies",
+        "companyServices": "Services for Companies and Institution",
+        "arbitration": "Arbitration",
+        "intellectualProperty": "Intellectual Property",
+        "corporateRestructuring": "Corporate Restructuring and Reorganization",
+        "companyEstablishment": "Establishing National and Foreign Companies",
+        "commercialAgencies": "Commercial Agencies",
+        "vision2030": "Supporting Vision 2030",
+        "estates": "Estates"
+    },
+    "hero": {
+        "defaultTitle": "Welcome to Our Platform",
+        "defaultSubtitle": "Innovative Solutions for Modern Challenges",
+        "defaultDescription": "We deliver cutting-edge web development, design, and scalable tech solutions tailored for your business.",
+        "profileAlt": "Hero Profile Image",
+        "bgAlt": "Hero Background Image",
+        "readMore": "Read More"
+    },
     "blog": {
-    "pageTitle": "Blog",
-    "pageDescription": "Discover insights, tutorials, and updates from our team",
-    "backButton": "Back",
-    "defaultAuthor": "Admin",
-    "defaultReadTime": "5 min read",
-    "closingNote": "Stay tuned for more articles and tutorials on modern web development, design practices, and scalable tech solutions."
-  }
+        "pageTitle": "Blog",
+        "pageDescription": "Discover insights, tutorials, and updates from our team",
+        "backButton": "Back",
+        "defaultAuthor": "Admin",
+        "defaultReadTime": "5 min read",
+        "closingNote": "Stay tuned for more articles and tutorials on modern web development, design practices, and scalable tech solutions."
+    },
+    "team": {
+        "sectionTitle": "Our Team",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "members": [
+            {
+                "name": "John Doe",
+                "position": "CEO",
+                "image": "/person.png"
+            },
+            {
+                "name": "Jane Smith",
+                "position": "CTO",
+                "image": "/person.png"
+            },
+            {
+                "name": "Mike Johnson",
+                "position": "Lead Designer",
+                "image": "/person.png"
+            },
+            {
+                "name": "Emily Davis",
+                "position": "Project Manager",
+                "image": "/person.png"
+            },
+            {
+                "name": "David Brown",
+                "position": "Developer",
+                "image": "/person.png"
+            },
+            {
+                "name": "Sophia Wilson",
+                "position": "Marketing Head",
+                "image": "/person.png"
+            }
+        ]
+    },
+    "clients": {
+        "sectionTitle": "What our clients are saying",
+        "description": "Our clients are our biggest advocates. Here's what they say about our services.",
+        "testimonials": [
+            {
+                "name": "Mohammed Saif",
+                "role": "CEO / Company",
+                "image": "/person.png",
+                "quote": "With the help of the hospitable staff I was able to get my work done without any hassle..."
+            },
+            {
+                "name": "Jane Doe",
+                "role": "CTO / Example Co",
+                "image": "/person.png",
+                "quote": "Great service, timely responses, and professional guidance. They made the process smooth..."
+            }
+        ]
+    },
+    "footer": {
+        "subscribePlaceholder": "Enter your email",
+        "subscribeButton": "Subscribe",
+        "contacts": "Contacts",
+        "modal": {
+            "success": "Thank you for subscribing!",
+            "error": "This email is already subscribed!"
+        },
+        "social": {
+            "twitter": "Twitter",
+            "facebook": "Facebook",
+            "google": "Google Plus"
+        },
+        "links": [
+            "About",
+            "Our Strategy",
+            "Our Advantages",
+            "Social Responsibility",
+            "Our Services"
+        ],
+        "copyright": "© 2024. All rights reserved."
+    }
 }

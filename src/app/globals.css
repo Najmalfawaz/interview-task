@@ -9,10 +9,9 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: 'DM Sans';
+  font-family: 'DM Sans', sans-serif;
   scroll-behavior: smooth;
   background-color: #4B2615;
-  /* Main section background */
 }
 
 /* Text colors */

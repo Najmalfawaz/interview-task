@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/dm-sans": "^5.2.6",
     "@reduxjs/toolkit": "^2.8.2",
     "axios": "^1.11.0",
     "clsx": "^2.1.1",

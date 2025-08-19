@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { useState, useEffect } from "react"
 import { ChevronDown, Search, X } from "lucide-react"
-import en from "../../i18n/en.json" // adjust path as needed
+import en from "../../i18n/en.json" 
 
 export default function HeaderNavigation() {
   const [language, setLanguage] = useState<"EN" | "AR">("EN")
@@ -62,7 +62,7 @@ export default function HeaderNavigation() {
   ]
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-[#00000066] backdrop-blur-md px-4 sm:px-6 lg:px-12 py-3 flex justify-between items-center font-[Poppins]">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-[#00000066] backdrop-blur-md px-4 sm:px-6 lg:px-12 py-3 flex justify-between items-center">
       <div className="text-primary font-bold text-lg sm:text-xl">LOGO</div>
 
       <div className="hidden lg:flex items-center gap-6 font-medium text-primary relative">
