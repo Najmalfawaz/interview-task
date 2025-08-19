@@ -10,12 +10,12 @@ import "swiper/css/pagination";
 interface HeroSlide {
   id: number;
   title: string;
-  subtitle: string;
+  subtitle?: string;
   description: string;
   profile_alt: string;
   bg_alt: string;
-  profile_pic: { url: string };
-  background_image: { url: string };
+  profile_pic?: { url: string };
+  background_image?: { url: string };
 }
 
 export default function HeroSection() {
@@ -31,15 +31,19 @@ export default function HeroSection() {
         );
         const data = await res.json();
 
-        const formattedSlides = data.data.map((item: any) => ({
+        const formattedSlides: HeroSlide[] = data.data.map((item: any) => ({
           id: item.id,
           title: item.title,
           subtitle: item.subtitle,
           description: item.description,
           profile_alt: item.profile_alt,
           bg_alt: item.bg_alt,
-          profile_pic: { url: item.profile_pic?.url },
-          background_image: { url: item.background_image?.url },
+          profile_pic: item.profile_pic
+            ? { url: item.profile_pic.url } // already absolute
+            : undefined,
+          background_image: item.background_image
+            ? { url: item.background_image.url } // already absolute
+            : undefined,
         }));
 
         setSlides(formattedSlides);
@@ -71,10 +75,7 @@ export default function HeroSection() {
   }
 
   return (
-    <section
-      className="relative w-full font-[Poppins] bg-black min-h-screen flex items-center overflow-hidden"
-      aria-label="Hero section"
-    >
+    <section className="relative w-full font-[Poppins] bg-black min-h-screen flex items-center overflow-hidden">
       <Swiper
         modules={[Pagination, Autoplay]}
         loop={loopEnabled}
@@ -96,31 +97,31 @@ export default function HeroSection() {
             <div className="relative w-full h-full flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8 text-primary px-6 lg:px-16 py-8">
 
               {/* Background Image */}
-              <div className="absolute inset-0 -z-10 w-full h-full">
-                {slide.background_image?.url && (
+              {slide.background_image?.url && (
+                <div className="absolute inset-0 -z-10 w-full h-full">
                   <Image
-                    src={`http://localhost:1337${slide.background_image.url}`}
+                    src={slide.background_image.url}
                     alt={slide.bg_alt}
                     fill
                     className="object-cover brightness-75"
                   />
-                )}
-                <div className="absolute inset-0 hero-gradient" />
-              </div>
+                  <div className="absolute inset-0 hero-gradient" />
+                </div>
+              )}
 
-              {/* Profile Image (Square & Responsive) */}
-              <div className="relative w-full lg:w-1/2 flex justify-center lg:justify-end order-1 lg:order-2">
-                {slide.profile_pic?.url && (
+              {/* Profile Image */}
+              {slide.profile_pic?.url && (
+                <div className="relative w-full lg:w-1/2 flex justify-center lg:justify-end order-1 lg:order-2">
                   <div className="relative w-3/4 sm:w-2/3 md:w-1/2 lg:w-3/5 xl:w-2/5 aspect-square rounded-2xl overflow-hidden shadow-2xl bg-[#643F2E] transform hover:scale-105 transition-transform duration-500">
                     <Image
-                      src={`http://localhost:1337${slide.profile_pic.url}`}
+                      src={slide.profile_pic.url}
                       alt={slide.profile_alt}
                       fill
                       className="object-cover"
                     />
                   </div>
-                )}
-              </div>
+                </div>
+              )}
 
               {/* Text Content */}
               <div className="relative w-full lg:w-1/2 max-w-2xl text-center lg:text-left flex-shrink-0 z-10 order-2 lg:order-1">
@@ -139,7 +140,7 @@ export default function HeroSection() {
         ))}
       </Swiper>
 
-      {/* Vertical Left Pagination */}
+      {/* Vertical Pagination */}
       <div className="custom-pagination absolute top-1/2 left-4 -translate-y-1/2 flex flex-col gap-3 z-20"></div>
     </section>
   );

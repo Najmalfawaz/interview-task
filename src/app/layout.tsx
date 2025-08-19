@@ -1,5 +1,5 @@
-import Footer from "@/components/Home/Footer";
-import HeaderNavigation from "@/components/Home/HeaderNavigation";
+import Footer from "@/components/shared/Footer";
+import HeaderNavigation from "@/components/shared/HeaderNavigation";
 import "./globals.css";
 import Head from "next/head";
 

@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About us",
+    "services": "Services",
+    "blog": "Blog",
+    "team": "Our Team",
+    "contact": "Contact us",
+    "book": "Book Appointment",
+    "searchPlaceholder": "Search..."
+  },
+  "services": {
+    "legalConsultation": "Legal consultation Services",
+    "foreignInvestment": "Foreign Investment services",
+    "contracts": "Contracts",
+    "notarization": "Notarization",
+    "insurance": "Insurance",
+    "defenseCases": "Defense in all Cases",
+    "banksFinancial": "Banks and Financial Institutions",
+    "corporateGovernance": "Corporate Governance Services",
+    "companiesLiquidation": "Companies Liquidation",
+    "internalRegulations": "Internal Regulations for Companies",
+    "companyServices": "Services for Companies and Institution",
+    "arbitration": "Arbitration",
+    "intellectualProperty": "Intellectual Property",
+    "corporateRestructuring": "Corporate Restructuring and Reorganization",
+    "companyEstablishment": "Establishing National and Foreign Companies",
+    "commercialAgencies": "Commercial Agencies",
+    "vision2030": "Supporting Vision 2030",
+    "estates": "Estates"
+  },
+    "blog": {
+    "pageTitle": "Blog",
+    "pageDescription": "Discover insights, tutorials, and updates from our team",
+    "backButton": "Back",
+    "defaultAuthor": "Admin",
+    "defaultReadTime": "5 min read",
+    "closingNote": "Stay tuned for more articles and tutorials on modern web development, design practices, and scalable tech solutions."
+  }
+}
